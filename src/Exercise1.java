@@ -42,7 +42,11 @@ public class Exercise1 {
 
         System.out.println();
 
-        Arrays.sort(modules, Comparator.comparingInt( a -> a.toLowerCase(Locale.ROOT).charAt(0)));
+        Arrays.sort(modules, Comparator.comparingInt( a -> {
+            if (a.toLowerCase(Locale.ROOT).charAt(0) == 'e')
+                return -1;
+            return 1;
+        }));
         System.out.println(Arrays.asList(modules));
 
 
