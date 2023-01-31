@@ -1,9 +1,10 @@
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        String[] modules = new String[8];
+        String[] modules = new String[9];
         modules[0] = "Java";
         modules[1] = "Python";
         modules[2] = "Fundamentals of Computing";
@@ -11,7 +12,8 @@ public class Exercise1 {
         modules[4] = "Cloud Computing";
         modules[5] = "Data Knowledge and Management";
         modules[6] = "Software Design and Developement";
-        modules[7] = "Dissertation Project";
+        modules[7] = "Epsilon Project";
+        modules[8] = "epsilon2 project";
 
 //        ArrayList<String> modulesByLengthDesc = Arrays.stream(modules)
 //                .sorted((m1, m2) -> m2.length() - m1.length())
@@ -39,6 +41,11 @@ public class Exercise1 {
         System.out.println(Arrays.asList(modules));
 
         System.out.println();
+
+        Arrays.sort(modules, Comparator.comparingInt( a -> a.toLowerCase(Locale.ROOT).charAt(0)));
+        System.out.println(Arrays.asList(modules));
+
+
 
 
 
