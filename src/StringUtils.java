@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class StringUtils {
@@ -57,6 +58,19 @@ public class StringUtils {
 
         return filteredElements;
     }
+
+    public static List<String> transformedList(List<String> strings, Function<String, String> function){
+        List<String> filteredList = new ArrayList<>();
+
+        for (String element: strings){
+            filteredList.add(function.apply(element));
+        }
+
+        return filteredList;
+    }
+
+
+
 
 
 }
