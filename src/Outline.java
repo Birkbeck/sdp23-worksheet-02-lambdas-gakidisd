@@ -29,9 +29,17 @@ public class Outline {
 
   }
 
+  public static void question1_2(){
+    String[] words = getWords();
+    Arrays.sort(words, (word1, word2) -> Integer.compare(word2.length(), word1.length()));
+
+    System.out.println("Question 2: " + Arrays.toString(words));
+  }
+
 
   public static void main(String[] args) {
-    question1_1();
+
+    String[] words = getWords();
 
 
 
