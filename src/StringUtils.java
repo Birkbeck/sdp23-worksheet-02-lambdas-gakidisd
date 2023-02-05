@@ -46,5 +46,17 @@ public class StringUtils {
         return filteredWords;
     }
 
+    public static <T> List<T> allMatches1(List<T> listOfElements, Predicate<T> function){
+        List<T> filteredElements = new ArrayList<>();
+
+        for (T element: listOfElements){
+            if (function.test(element)){
+                filteredElements.add(element);
+            }
+        }
+
+        return filteredElements;
+    }
+
 
 }
