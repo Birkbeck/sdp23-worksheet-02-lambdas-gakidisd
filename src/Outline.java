@@ -19,15 +19,19 @@ public class Outline {
 
   }
 
+  public static void question1_1(){
+    String[] words = getWords();
+//    Different approach
+//    Arrays.sort(words, Comparator.comparingInt(String::length));
+    Arrays.sort(words, (word1, word2) -> Integer.compare(word1.length() , word2.length()));
+
+    System.out.println("Question 1: " + Arrays.toString(words));
+
+  }
+
 
   public static void main(String[] args) {
-    String[] words = getWords();
-    Arrays.sort(words, Comparator.comparingInt(String::length));
-
-    // Another approach
-    // Arrays.sort(words, (word1, word2) -> Integer.compare(word1.length(), word2.length()));
-
-    System.out.println(Arrays.toString(words));
+    question1_1();
 
 
 
