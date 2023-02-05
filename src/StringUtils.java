@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 public class StringUtils {
 
     public static int eChecker(String str1, String str2) {
@@ -30,5 +34,17 @@ public class StringUtils {
     public static <T> T betterEntry(T t1, T t2, TwoElementPredicate<T> lambda){
         return lambda.findBest(t1,t2) ? t1 : t2;
     }
+
+
+    public static List<String> allMatches(List<String> words, Predicate<String> func){
+        List<String> filteredWords = new ArrayList<>();
+        for (String s: words){
+            if (func.test(s)){
+                filteredWords.add(s);
+            }
+        }
+        return filteredWords;
+    }
+
 
 }
