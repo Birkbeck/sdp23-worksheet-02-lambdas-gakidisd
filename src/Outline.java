@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Outline {
 
@@ -20,6 +21,15 @@ public class Outline {
 
 
   public static void main(String[] args) {
+    String[] words = getWords();
+    Arrays.sort(words, Comparator.comparingInt(String::length));
+
+    // Another approach
+    // Arrays.sort(words, (word1, word2) -> Integer.compare(word1.length(), word2.length()));
+
+    System.out.println(Arrays.toString(words));
+
+
 
   }
 }
