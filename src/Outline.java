@@ -57,21 +57,22 @@ public class Outline {
 
   }
 
+  public static void question2(){
+    String[] words = getWords();
+
+    Arrays.sort(words, (s1,s2) -> StringUtils.eChecker(s1,s2));
+    System.out.println("Question 2: " + Arrays.toString(words));
+
+  }
+
 
 
 
 
   public static void main(String[] args) {
 
-    String[] words = getWords();
+    System.out.println(StringUtils.betterString("Dimitris", "Katerina", (s1, s2) -> s1.length()> s2.length()));
 
-    Arrays.sort(words, (word1, word2) -> {
-      if (word1.contains("e") && !word2.contains("e")) return -1;
-      if (word2.contains("e") && !word1.contains("e")) return 1;
-      return 0;
-    });
-
-    System.out.println("Question 1.4: " + Arrays.toString(words));
 
 
   }
