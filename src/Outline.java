@@ -44,6 +44,18 @@ public class Outline {
 
   }
 
+  public static void question1_4(){
+    String[] words = getWords();
+
+    Arrays.sort(words, (word1, word2) -> {
+      if (word1.contains("e") && !word2.contains("e")) return -1;
+      if (word2.contains("e") && !word1.contains("e")) return 1;
+      return 0;
+    });
+
+    System.out.println("Question 1.4: " + Arrays.toString(words));
+
+  }
 
 
 
@@ -53,10 +65,18 @@ public class Outline {
 
     String[] words = getWords();
 
-    Arrays.sort(words, (word1,word2) -> word1.charAt(0) - word2.charAt(0));
-    System.out.println(Arrays.asList(words));
+    Arrays.sort(words, (word1, word2) -> {
+      if (word1.contains("e") && !word2.contains("e")) return -1;
+      if (word2.contains("e") && !word1.contains("e")) return 1;
+      return 0;
+    });
+
+    System.out.println("Question 1.4: " + Arrays.toString(words));
+
+
+  }
 
 
 
   }
-}
+
