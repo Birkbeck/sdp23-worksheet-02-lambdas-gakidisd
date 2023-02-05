@@ -25,7 +25,7 @@ public class Outline {
 //    Arrays.sort(words, Comparator.comparingInt(String::length));
     Arrays.sort(words, (word1, word2) -> Integer.compare(word1.length() , word2.length()));
 
-    System.out.println("Question 1: " + Arrays.toString(words));
+    System.out.println("Question 1.1: " + Arrays.toString(words));
 
   }
 
@@ -33,13 +33,28 @@ public class Outline {
     String[] words = getWords();
     Arrays.sort(words, (word1, word2) -> Integer.compare(word2.length(), word1.length()));
 
-    System.out.println("Question 2: " + Arrays.toString(words));
+    System.out.println("Question 1.2: " + Arrays.toString(words));
   }
+
+  public static void question1_3(){
+    String[] words = getWords();
+    Arrays.sort(words, (word1, word2) -> word1.charAt(0) - word2.charAt(0));
+
+    System.out.println("Question 1.3: " + Arrays.toString(words));
+
+  }
+
+
+
+
 
 
   public static void main(String[] args) {
 
     String[] words = getWords();
+
+    Arrays.sort(words, (word1,word2) -> word1.charAt(0) - word2.charAt(0));
+    System.out.println(Arrays.asList(words));
 
 
 
