@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class Outline {
 
@@ -71,10 +72,16 @@ public class Outline {
 
   public static void main(String[] args) {
 
-    System.out.println(StringUtils.betterString("Dimitris", "Katerinaaa", (s1, s2) -> s1.length()> s2.length()));
+    List<String> words = List.of(getWords());
 
-    System.out.println(StringUtils.betterEntry("Dimitris","Katerinaaa", (s1,s2) -> s1.length() > s2.length()));
 
+    List<String> shortWords = StringUtils.allMatches(words, s -> s.length() < 4);
+    List<String> wordsWithB = StringUtils.allMatches(words, s -> s.contains("b"));
+    List<String> evenLengthWords = StringUtils.allMatches(words, s -> (s.length() % 2) == 0);
+
+    System.out.println(shortWords);
+    System.out.println(wordsWithB);
+    System.out.println(evenLengthWords);
   }
 
 

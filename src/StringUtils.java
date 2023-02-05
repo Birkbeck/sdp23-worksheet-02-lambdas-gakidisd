@@ -70,6 +70,17 @@ public class StringUtils {
     }
 
 
+    public static<T> List<T> transformedList1(List<T> listOfElements, Function<T,T> function){
+        List<T> listApplied = new ArrayList<>();
+
+        for (T element: listOfElements){
+            listApplied.add(function.apply(element));
+        }
+
+        return listApplied;
+    }
+
+
 
 
 
